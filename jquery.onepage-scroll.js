@@ -281,6 +281,7 @@
       if(next) {
         next.addClass("active")
         if(settings.pagination == true) $(".onepage-pagination li a" + "[data-index='" + (init_index) + "']").addClass("active");
+        if(settings.documentNodeChild == undefined){ settings.documentNodeChild = $('body')[0]; }
         settings.documentNodeChild.className = settings.documentNodeChild.className.replace(/\W\bviewing-page-\d.*?\b/g, '');
         settings.documentNode.addClass("viewing-page-"+next.data("index"))
         if (history.replaceState && settings.updateURL == true) {
@@ -307,6 +308,7 @@
             next.addClass("active")
             $(".onepage-pagination li a" + ".active").removeClass("active");
             $(".onepage-pagination li a" + "[data-index='" + (page_index) + "']").addClass("active");
+            if(settings.documentNodeChild == undefined){ settings.documentNodeChild = $('body')[0]; }
             settings.documentNodeChild.className = settings.documentNodeChild.className.replace(/\W\bviewing-page-\d.*?\b/g, '');
             settings.documentNode.addClass("viewing-page-"+next.data("index"))
           }

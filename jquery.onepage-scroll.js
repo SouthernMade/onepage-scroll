@@ -131,7 +131,6 @@
         $(".onepage-pagination li a" + "[data-index='" + index + "']").removeClass("active");
         $(".onepage-pagination li a" + "[data-index='" + next.data("index") + "']").addClass("active");
       }
-      console.log(settings.documentNode)
       settings.documentNodeChild.className = settings.documentNodeChild.className.replace(/\W\bviewing-page-\d.*?\b/g, '');
       settings.documentNode.addClass("viewing-page-"+next.data("index"))
 
